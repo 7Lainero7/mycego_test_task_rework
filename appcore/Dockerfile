@@ -1,23 +1,23 @@
-FROM python:alpine
+FROM python:3.12-slim
 
 # Устанавливаем рабочую директорию
 WORKDIR /app
 
-# Копируем файлы проекта в контейнер
-COPY . /app
+# Копируем только файл зависимостей для кэширования слоёв
+COPY requirements.txt /app/
 
 # Устанавливаем зависимости
 RUN python -m venv /venv && \
-    /venv/bin/pip install --upgrade pip && \
-    /venv/bin/pip install -r requirements.txt
+    /venv/bin/pip install --upgrade pip --no-cache-dir && \
+    /venv/bin/pip install -r requirements.txt --no-cache-dir
+
+# Копируем остальные файлы проекта
+COPY . /app
 
 # Указываем переменные окружения
 ENV PATH="/venv/bin:$PATH" \
     PYTHONUNBUFFERED=1 \
     DJANGO_SETTINGS_MODULE=appcore.settings
-
-# Применяем миграции
-RUN python manage.py migrate
 
 # Открываем порт для приложения
 EXPOSE 8000
