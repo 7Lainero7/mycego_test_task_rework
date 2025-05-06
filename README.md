@@ -28,8 +28,8 @@
 
 1. **Клонирование репозитория**
    ```bash
-   git clone <URL_репозитория>
-   cd <папка_проекта>
+   git clone https://github.com/7Lainero7/mycego_test_task_rework.git
+   cd mycego_test_task_rework
    ```
 
 2. **Установка зависимостей**
@@ -43,13 +43,13 @@
 3. **Применение миграций**
    Примените миграции для настройки базы данных:
    ```bash
-   python manage.py migrate
+   python appcore/manage.py migrate
    ```
 
 4. **Запуск сервера разработки**
    Запустите сервер разработки:
    ```bash
-   python manage.py runserver
+   python appcore/manage.py runserver
    ```
 
 5. **Использование**
@@ -65,8 +65,8 @@
 
 1. **Клонирование репозитория**
    ```bash
-   git clone <URL_репозитория>
-   cd <папка_проекта>
+   git clone https://github.com/7Lainero7/mycego_test_task_rework.git
+   cd mycego_test_task_rework
    ```
 
 2. **Сборка контейнера**
