@@ -113,6 +113,7 @@
 - Python 3.12
 - Django 5.2
 - Bootstrap 5
+- Github Actions
 - REST API Яндекс.Диска
 - Библиотека `requests` для работы с HTTP-запросами
 - Docker
